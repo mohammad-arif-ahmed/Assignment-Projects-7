@@ -12,16 +12,15 @@ const TaskStatus = ({
 
     const handleComplete = (taskId) => {
         const completedTask = inProgressTasks.find(task => task.id === taskId);
+        if (!completedTask) return; 
 
         setInProgressTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));
 
-        if (completedTask) {
-            setResolvedTasks(prevTasks => [...prevTasks, completedTask]);
+        setResolvedTasks(prevTasks => [...prevTasks, completedTask]);
             
-            setAllTickets(prevTickets => prevTickets.filter(ticket => ticket.id !== taskId));
+        setAllTickets(prevTickets => prevTickets.filter(ticket => ticket.id !== taskId));
 
-            toast.success(`Ticket #${completedTask.id.split('-')[1]} RESOLVED!`);
-        }
+        toast.success(`Ticket #${completedTask.id.split('-')[1]} RESOLVED!`);
     };
     
 
@@ -38,7 +37,7 @@ const TaskStatus = ({
                             <p className="text-sm font-medium text-gray-700 mb-2 leading-tight">{task.title}</p>
                             
                             <button
-                                onClick={() => handleComplete(task.id)} 
+                                onClick={() => handleComplete(task.id)}
                                 className="w-full px-3 py-2 bg-green-600 text-white text-sm font-semibold rounded-md hover:bg-green-700 transition duration-200"
                             >
                                 Complete
