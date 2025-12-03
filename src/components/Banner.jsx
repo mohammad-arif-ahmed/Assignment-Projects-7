@@ -11,8 +11,14 @@ const Banner = ({ inProgressCount, resolvedCount }) => {
                 
                 <img 
                     src={vectorPattern} 
-                    alt="Background Pattern" 
+                    alt="Background Pattern 1" 
                     className="absolute inset-0 w-full h-full object-cover opacity-20"
+                />
+                
+                <img 
+                    src={vectorPattern} 
+                    alt="Background Pattern 2" 
+                    className="absolute inset-0 w-full h-full object-cover opacity-10 scale-x-[-1]"
                 />
 
                 <div className="relative z-10 text-center">
@@ -27,8 +33,14 @@ const Banner = ({ inProgressCount, resolvedCount }) => {
                 
                 <img 
                     src={vectorPattern} 
-                    alt="Background Pattern" 
-                    className="absolute inset-0 w-full h-full object-cover opacity-20"
+                    alt="Background Pattern 1" 
+                    className="absolute inset-0 w-full h-full object-cover opacity-20 scale-x-[-1]"
+                />
+                
+                <img 
+                    src={vectorPattern} 
+                    alt="Background Pattern 2" 
+                    className="absolute inset-0 w-full h-full object-cover opacity-10"
                 />
 
                 <div className="relative z-10 text-center">
